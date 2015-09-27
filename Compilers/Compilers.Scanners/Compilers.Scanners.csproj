@@ -41,11 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlternationCharSetExpression.cs" />
+    <Compile Include="AlternationExpression.cs" />
+    <Compile Include="ConcatenationExpression.cs" />
+    <Compile Include="EmptyExpression.cs" />
+    <Compile Include="KleeneStarExpression.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegularExpression.cs" />
     <Compile Include="RegularExpressionConvertor.cs" />
     <Compile Include="RegularExpressionType.cs" />
+    <Compile Include="StringLiteralExpression.cs" />
+    <Compile Include="SymbolExpression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
