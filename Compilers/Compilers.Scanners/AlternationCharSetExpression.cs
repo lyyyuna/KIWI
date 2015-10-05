@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace Compilers.Scanners
 {
-    class AlternationCharSetExpression: RegularExpression
+    public sealed class AlternationCharSetExpression: RegularExpression
     {
         private List<char> m_charSet;
 

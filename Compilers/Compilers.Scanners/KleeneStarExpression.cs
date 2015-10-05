@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compilers.Scanners
 {
-    class KleeneStarExpression: RegularExpression
+    public sealed class KleeneStarExpression: RegularExpression
     {
         public RegularExpression InnerExpression { get; private set; }
 

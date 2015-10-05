@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compilers.Scanners
 {
-    class StringLiteralExpression: RegularExpression
+    public sealed class StringLiteralExpression: RegularExpression
     {
         public string Literal { get; private set; }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compilers.Scanners
 {
-    class SymbolExpression: RegularExpression
+    public sealed class SymbolExpression: RegularExpression
     {
         public char Symbol { get; private set; }
 

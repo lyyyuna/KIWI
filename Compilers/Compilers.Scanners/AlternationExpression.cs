@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compilers.Scanners
 {
-    class AlternationExpression: RegularExpression
+    public sealed class AlternationExpression: RegularExpression
     {
         public RegularExpression Expression1 {get; private set;}
         public RegularExpression Expression2 {get; private set;}

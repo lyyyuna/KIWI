@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Compilers.Scanners
 {
-    class ConcatenationExpression: RegularExpression
+    public sealed class ConcatenationExpression: RegularExpression
     {
         public RegularExpression Left {get; private set;}
         public RegularExpression Right { get; private set; }
