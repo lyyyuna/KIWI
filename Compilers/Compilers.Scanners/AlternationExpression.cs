@@ -8,14 +8,14 @@ namespace Compilers.Scanners
 {
     class AlternationExpression: RegularExpression
     {
-        private RegularExpression regularExpression;
-        private RegularExpression other;
+        public RegularExpression Expression1 {get; private set;}
+        public RegularExpression Expression2 {get; private set;}
 
         public AlternationExpression(RegularExpression regularExpression, RegularExpression other): base(RegularExpressionType.Alternation)
         {
             // TODO: Complete member initialization
-            this.regularExpression = regularExpression;
-            this.other = other;
+            this.Expression1 = regularExpression;
+            this.Expression2 = other;
         }
     }
 }

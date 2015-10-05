@@ -8,13 +8,13 @@ namespace Compilers.Scanners
 {
     class SymbolExpression: RegularExpression
     {
-        private char c;
+        public char Symbol { get; private set; }
 
 
         public SymbolExpression(char c): base(RegularExpressionType.Symbol)
         {
             // TODO: Complete member initialization
-            this.c = c;
+            this.Symbol = c;
         }
     }
 }

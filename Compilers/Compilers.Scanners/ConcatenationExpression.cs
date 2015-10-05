@@ -8,14 +8,14 @@ namespace Compilers.Scanners
 {
     class ConcatenationExpression: RegularExpression
     {
-        private RegularExpression regularExpression;
-        private RegularExpression next;
+        public RegularExpression Left {get; private set;}
+        public RegularExpression Right { get; private set; }
 
         public ConcatenationExpression(RegularExpression regularExpression, RegularExpression next): base(RegularExpressionType.Concatenation)
         {
             // TODO: Complete member initialization
-            this.regularExpression = regularExpression;
-            this.next = next;
+            this.Left = regularExpression;
+            this.Right = next;
         }
     }
 }

@@ -8,12 +8,12 @@ namespace Compilers.Scanners
 {
     class StringLiteralExpression: RegularExpression
     {
-        private string literal;
+        public string Literal { get; private set; }
 
         public StringLiteralExpression(string literal): base(RegularExpressionType.StringLiteral)
         {
             // TODO: Complete member initialization
-            this.literal = literal;
+            this.Literal = literal;
         }
     }
 }

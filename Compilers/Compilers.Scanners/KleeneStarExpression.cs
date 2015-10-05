@@ -8,12 +8,12 @@ namespace Compilers.Scanners
 {
     class KleeneStarExpression: RegularExpression
     {
-        private RegularExpression regularExpression;
+        public RegularExpression InnerExpression { get; private set; }
 
         public KleeneStarExpression(RegularExpression regularExpression): base(RegularExpressionType.KleenStar)
         {
             // TODO: Complete member initialization
-            this.regularExpression = regularExpression;
+            this.InnerExpression = regularExpression;
         }
     }
 }

@@ -8,12 +8,12 @@ namespace Compilers.Scanners
 {
     class AlternationCharSetExpression: RegularExpression
     {
-        private IEnumerable<char> charSet;
+        private List<char> m_charSet;
 
         public AlternationCharSetExpression(IEnumerable<char> charSet): base(RegularExpressionType.AlternationCharSet)
         {
             // TODO: Complete member initialization
-            this.charSet = charSet;
+            this.m_charSet = new List<char>(charSet);
         }
     }
 }
