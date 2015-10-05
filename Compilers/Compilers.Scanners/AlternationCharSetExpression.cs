@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Compilers.Scanners
 {
@@ -14,6 +15,14 @@ namespace Compilers.Scanners
         {
             // TODO: Complete member initialization
             this.m_charSet = new List<char>(charSet);
+        }
+
+        public ReadOnlyCollection<char> CharSet
+        {
+            get
+            {
+                return m_charSet.AsReadOnly();
+            }
         }
     }
 }

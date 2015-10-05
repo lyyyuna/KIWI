@@ -45,6 +45,10 @@
     <Compile Include="AlternationExpression.cs" />
     <Compile Include="ConcatenationExpression.cs" />
     <Compile Include="EmptyExpression.cs" />
+    <Compile Include="Generator\NFAConverter.cs" />
+    <Compile Include="Generator\NFAEdge.cs" />
+    <Compile Include="Generator\NFAModel.cs" />
+    <Compile Include="Generator\NFAState.cs" />
     <Compile Include="KleeneStarExpression.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
