@@ -142,7 +142,7 @@ namespace Compilers.Scanners.Generator
             var innerNfa = Convert(exp.InnerExpression);
 
             var tail = new NFAState();
-            var entry = new NFAEdge();
+            var entry = new NFAEdge(tail);
 
             innerNfa.TailState.AddEmptyEdgeTo(tail);
             tail.AddEdge(innerNfa.EntryEdge);

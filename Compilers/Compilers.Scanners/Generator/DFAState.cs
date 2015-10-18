@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Compilers.Scanners.Generator
 {
@@ -22,6 +23,14 @@ namespace Compilers.Scanners.Generator
             get
             {
                 return m_nfastateSet;
+            }
+        }
+
+        public ReadOnlyCollection<DFAEdge> OutEdges
+        {
+            get
+            {
+                return m_OutEdges.AsReadOnly();
             }
         }
 

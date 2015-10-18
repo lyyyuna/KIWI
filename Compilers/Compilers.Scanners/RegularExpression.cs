@@ -88,5 +88,44 @@ namespace Compilers.Scanners
         {
             return new ConcatenationExpression(left, right);
         }
+
+
+        // extended regex operation
+        public RegularExpression Many1()
+        {
+            return this.Concat(this.Many());
+        }
+
+        public RegularExpression Optional()
+        {
+            return this.Union(Empty());
+        }
+
+        public static RegularExpression Range(char min, char max)
+        {
+            List<char> rangecharset = new List<char>();
+            for (char c = min; c <= max; c++ )
+            {
+                rangecharset.Add(c);
+            }
+                
+            return new AlternationCharSetExpression(rangecharset);
+        }
+
+        public RegularExpression Repeat(int num)
+        {
+            if (num<=0)
+            {
+                return Empty();
+            }
+
+            var res = this;
+            for (int i = 1; i < num; i++)
+            {
+                res = res.Concat(this);
+            }
+
+            return res;
+        }
     }
 }
