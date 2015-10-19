@@ -21,8 +21,27 @@ namespace Compilers.UnitTests
 
             // verify state0
             var state0 = D_ID.States[0];
+            // state0 is empty, every wrong input goes to it 
             Assert.AreEqual(36, state0.OutEdges.Count);
+            foreach (var edge in state0.OutEdges)
+            {
+                Assert.AreEqual(0, edge.TargetState.Index);
+            }
 
+            // verify initial state
+            var state1 = D_ID.States[1];
+
+            foreach (var edge in state1.OutEdges)
+            {
+                if (edge.Symbol >='a' && edge.Symbol <='z')
+                {
+                    Assert.IsTrue(edge.TargetState.Index > 0);
+                }
+                else
+                {
+                    Assert.AreEqual(0, edge.TargetState.Index);
+                }
+            }
         }
     }
 }

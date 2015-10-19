@@ -37,6 +37,7 @@ namespace Compilers.Scanners.Generator
         private void AddState(DFAState state)
         {
             m_states.Add(state);
+            state.Index = m_states.Count - 1;
         }
 
         // generate dfamodel

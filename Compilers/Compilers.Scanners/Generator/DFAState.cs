@@ -12,6 +12,12 @@ namespace Compilers.Scanners.Generator
         private List<DFAEdge> m_OutEdges;
         private SortedSet<int> m_nfastateSet;
 
+        public int Index
+        {
+            get;
+            internal set;
+        }
+
         internal DFAState()
         {
             m_OutEdges = new List<DFAEdge>();
@@ -37,6 +43,7 @@ namespace Compilers.Scanners.Generator
         internal void AddEdge(DFAEdge edge)
         {
             m_OutEdges.Add(edge);
+
         }
     }
 }
