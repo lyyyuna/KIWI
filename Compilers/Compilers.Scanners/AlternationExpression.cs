@@ -13,7 +13,10 @@ namespace Compilers.Scanners
 
         public AlternationExpression(RegularExpression regularExpression, RegularExpression other): base(RegularExpressionType.Alternation)
         {
-            // TODO: Complete member initialization
+            CodeContract.RequireArgumentNotNull(regularExpression, "expression1");
+            CodeContract.RequireArgumentNotNull(other, "expression2");
+
+
             this.Expression1 = regularExpression;
             this.Expression2 = other;
         }

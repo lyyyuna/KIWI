@@ -42,6 +42,8 @@ namespace Compilers.Scanners.Generator
 
         internal void AddEdge(DFAEdge edge)
         {
+            CodeContract.RequireArgumentNotNull(edge, "edge");
+
             m_OutEdges.Add(edge);
 
         }

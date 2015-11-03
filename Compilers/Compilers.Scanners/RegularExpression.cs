@@ -103,6 +103,8 @@ namespace Compilers.Scanners
 
         public static RegularExpression Range(char min, char max)
         {
+            CodeContract.Require(min <= max, "max", "The lower bound must be less than or equal to upper bound");
+
             List<char> rangecharset = new List<char>();
             for (char c = min; c <= max; c++ )
             {

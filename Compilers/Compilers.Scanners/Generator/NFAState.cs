@@ -20,17 +20,25 @@ namespace Compilers.Scanners.Generator
         }
 
         public ReadOnlyCollection<NFAEdge> OutEdges
-        { get 
-            { return this.m_OutEdges.AsReadOnly(); }
+        { 
+            get 
+            { 
+                return this.m_OutEdges.AsReadOnly(); 
+            }
         }
 
         internal void AddEmptyEdgeTo(NFAState targetstate)
         {
+            CodeContract.RequireArgumentNotNull(targetstate, "targetstate");
+
+
             this.m_OutEdges.Add(new NFAEdge(targetstate));
         }
 
         internal void AddEdge(NFAEdge edge)
         {
+            CodeContract.RequireArgumentNotNull(edge, "edge");
+
             m_OutEdges.Add(edge);
         }
     }

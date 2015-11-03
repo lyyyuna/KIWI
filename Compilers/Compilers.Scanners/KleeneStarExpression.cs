@@ -12,7 +12,9 @@ namespace Compilers.Scanners
 
         public KleeneStarExpression(RegularExpression regularExpression): base(RegularExpressionType.KleenStar)
         {
-            // TODO: Complete member initialization
+            CodeContract.RequireArgumentNotNull(regularExpression, "innerExp");
+
+
             this.InnerExpression = regularExpression;
         }
     }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AlternationCharSetExpression.cs" />
     <Compile Include="AlternationExpression.cs" />
+    <Compile Include="CodeContract.cs" />
     <Compile Include="ConcatenationExpression.cs" />
     <Compile Include="EmptyExpression.cs" />
     <Compile Include="Generator\DFAEdge.cs" />

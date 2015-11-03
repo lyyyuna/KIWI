@@ -13,7 +13,10 @@ namespace Compilers.Scanners
 
         public ConcatenationExpression(RegularExpression regularExpression, RegularExpression next): base(RegularExpressionType.Concatenation)
         {
-            // TODO: Complete member initialization
+            CodeContract.RequireArgumentNotNull(regularExpression, "left");
+            CodeContract.RequireArgumentNotNull(next, "right");
+
+
             this.Left = regularExpression;
             this.Right = next;
         }
