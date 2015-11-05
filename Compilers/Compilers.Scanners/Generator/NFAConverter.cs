@@ -8,6 +8,16 @@ namespace Compilers.Scanners.Generator
 {
     public class NFAConverter: RegularExpressionConvertor<NFAModel>
     {
+        static NFAConverter s_Instance = new NFAConverter();
+
+        public static NFAConverter Default
+        {
+            get
+            {
+                return s_Instance;
+            }
+        }
+
         public override NFAModel ConvertAlternation(AlternationExpression exp)
         {
             var nfa1 = Convert(exp.Expression1);
