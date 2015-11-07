@@ -8,7 +8,7 @@ namespace Compilers.Scanners
 {
     public sealed class StringLiteralExpression: RegularExpression
     {
-        public string Literal { get; private set; }
+        public new string Literal { get; private set; }
 
         public StringLiteralExpression(string literal): base(RegularExpressionType.StringLiteral)
         {

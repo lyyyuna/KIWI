@@ -35,11 +35,18 @@ namespace Compilers.Scanners
             return (Lexicon == other.Lexicon) && (Index == other.Index);
         }
 
+
+        // override
         public override bool Equals(object obj)
         {
             var other = obj as TokenIdentity;
 
             return Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return Index;
         }
 
         public NFAModel CreateFiniteAutomationModel()

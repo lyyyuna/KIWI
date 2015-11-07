@@ -8,7 +8,7 @@ namespace Compilers.Scanners
 {
     public sealed class SymbolExpression: RegularExpression
     {
-        public char Symbol { get; private set; }
+        public new char Symbol { get; private set; }
 
 
         public SymbolExpression(char c): base(RegularExpressionType.Symbol)

@@ -43,5 +43,21 @@ namespace Compilers.UnitTests
                 }
             }
         }
+
+        [TestMethod]
+        public void LexerStateToDFATest()
+        {
+            Lexicon lexicon = new Lexicon();
+            LexerState global = lexicon.DefaultLexState;
+
+            var IF = global.DefineToken(RE.Literal("if"));
+            var ELSE = global.DefineToken(RE.Literal("else"));
+            var ID = global.DefineToken(RE.Range('a', 'z').Concat((RE.Range('a', 'z') | RE.Range('0', '9')).Many()));
+            var NUM = global.DefineToken(RE.Range('0', '9').Many1());
+            var ERROR = global.DefineToken(RE.Range(Char.MinValue, (char)255));
+
+            NFAModel nfa = lexicon.CreateFiniteAutomationModel();
+            DFAModel dfa = DFAModel.FromNFA(nfa);
+        }
     }
 }

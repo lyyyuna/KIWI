@@ -17,7 +17,7 @@ namespace Compilers.Scanners
             this.m_charSet = new List<char>(charSet);
         }
 
-        public ReadOnlyCollection<char> CharSet
+        public new ReadOnlyCollection<char> CharSet
         {
             get
             {
