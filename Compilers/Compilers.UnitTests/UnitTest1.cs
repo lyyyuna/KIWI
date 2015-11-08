@@ -56,8 +56,11 @@ namespace Compilers.UnitTests
             var NUM = global.DefineToken(RE.Range('0', '9').Many1());
             var ERROR = global.DefineToken(RE.Range(Char.MinValue, (char)255));
 
-            NFAModel nfa = lexicon.CreateFiniteAutomationModel();
-            DFAModel dfa = DFAModel.FromNFA(nfa);
+            // NFAModel nfa = lexicon.CreateFiniteAutomationModel();
+            // DFAModel dfa = DFAModel.FromNFA(nfa);
+            LexerBuilder lb = new LexerBuilder(lexicon);
+            lb.ConvertLexiconToNFA();
+            lb.ConvertNFAToDFA();
         }
     }
 }

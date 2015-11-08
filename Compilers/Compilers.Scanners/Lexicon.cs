@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Compilers.Scanners.Generator;
+using System.Collections.ObjectModel;
 
 namespace Compilers.Scanners
 {
@@ -38,6 +39,11 @@ namespace Compilers.Scanners
             m_tokens.Add(token);
 
             return token;
+        }
+
+        public ReadOnlyCollection<TokenIdentity>  GetTokens()
+        {
+            return m_tokens.AsReadOnly();
         }
 
         public LexerState DefineState()
